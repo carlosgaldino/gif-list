@@ -1,0 +1,8 @@
+[package]
+name = "gif-list"
+version = "0.1.0"
+authors = ["Carlos Galdino <carloshsgaldino@gmail.com>"]
+
+[dependencies]
+serde = "0.4.3"
+regex = "0.1.8"
