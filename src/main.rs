@@ -1,11 +1,11 @@
-extern crate serde;
+extern crate serde_json;
 extern crate regex;
 
 use std::io::prelude::*;
 use std::env;
 use std::fs::File;
 use std::path::Path;
-use serde::json::{self, Value};
+use serde_json::Value;
 use regex::Regex;
 
 fn main() {
@@ -14,7 +14,7 @@ fn main() {
 
     file.read_to_string(&mut content);
 
-    let data: Value = json::from_str(&content).unwrap();
+    let data: Value = serde_json::from_str(&content).unwrap();
     let obj         = data.as_object().unwrap();
     let search      = match env::args().skip(1).next() {
         Some(term)  => term,
